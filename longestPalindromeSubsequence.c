@@ -25,6 +25,7 @@ int longestPalindromeSubsequence(char *str, int start, int len){
 	if(len == 1)
 	   return 1;
 
+	// If there are only two characters and they both are same Base case
 	if(str[start] == str[start + len - 1]){
 	   return 2 + longestPalindromeSubsequence(str, start+1, len-2);
 	} else {
