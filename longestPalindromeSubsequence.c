@@ -17,6 +17,7 @@ int max(int a, int b){
 	return b;
 }
 
+// Recursive fucntion to find the longest length of palindrome
 int longestPalindromeSubsequence(char *str, int start, int len){
 
 	if(len == 0)
@@ -30,7 +31,7 @@ int longestPalindromeSubsequence(char *str, int start, int len){
 	   return 2 + longestPalindromeSubsequence(str, start+1, len-2);
 	} else {
 		return max(longestPalindromeSubsequence(str, start+1, len-1),
-				   longestPalindromeSubsequence(str, start, len-1));
+			   longestPalindromeSubsequence(str, start, len-1));
 	}
 }
 
