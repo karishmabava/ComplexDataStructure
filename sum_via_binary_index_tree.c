@@ -10,7 +10,10 @@
 
 // Adding values to the elements in the binary index tree
 void updateTree(int *bi, int n, int index, int val){
-	
+
+	/* We have index in bittree based on 1 but arr is based on zero.
+	 * in fenwick tree we dont fill anything in 0 node.
+	 */	
 	index = index + 1;
 	
 	while(n>=index){
@@ -20,9 +23,12 @@ void updateTree(int *bi, int n, int index, int val){
 }
 
 // Sum function to get sum from binary index tree
+// This function presumes that we ve preprocessed the binary index tree
 int getSum(int *bi, int index){
 
 	int sum=0;
+	
+	// Same reason for +1 as state above
 	index = index+1;
 
 	while(index > 0){
