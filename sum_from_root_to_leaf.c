@@ -40,10 +40,10 @@ bool hasPathSum(struct node *root, int sum){
 	   subSum = sum - root->data;
 		
 	   if(subSum == 0 && root->left == NULL && root->right == NULL){
-		  return 1;
+          return 1;
 	   }
-
-	   return (hasPathSum(root->left, subSum) || hasPathSum(root->right, subSum));
+      
+       return (hasPathSum(root->left, subSum) || hasPathSum(root->right, subSum));
 	}
 }
 
