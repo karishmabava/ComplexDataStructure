@@ -1,7 +1,6 @@
 /* Question: Given an array of n integers, find the 3 elements such that a[i] < a[j] < a[k] and i < j < k in 0(n) time. If there are multiple such triplets, then print any one of them.
 
 */
-
 // Complexity O(n)
 
 #include <stdio.h>
