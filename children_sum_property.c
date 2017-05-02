@@ -20,6 +20,7 @@ struct node* newNode(int data)
   return(node);
 }
 
+/* Long method
 bool isSumProperty(struct node *root){
 
   int left_data = 0;
@@ -44,6 +45,25 @@ bool isSumProperty(struct node *root){
   } 
 
 	return false;
+} */
+
+
+// Short method, just exclude the false condition
+bool isSumProperty(struct node *root){
+
+  int left_data = 0;
+  int right_data = 0;
+
+  if(root == NULL){
+     return true;
+  }
+
+  if(root->left != NULL && root->right != NULL &&
+     (root->data != (root->left->data + root->right->data))){
+     return false;
+  }
+
+  return (isSumProperty(root->left) && isSumProperty(root->right));
 }
  
 /* Driver program to test above function */
